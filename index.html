@@ -13,12 +13,39 @@
 
     <div class="grid grid-cols-2 grid-rows-1 flex-grow row" id="main-content">
         <div class="bg-white" id="side-panel">
-
+            <ul id="boards-container"></ul>
+            <button id="button-board">New Board</button>
         </div>
 
-        <div class="bg-slate-200" id="boards-panel">
-
+        <div class="bg-slate-200" id="items-panel">
+            <ul id="items-container"></ul>
+            <button id="button-item">New item</button>
         </div>
+    </div>
+
+    <div id="overlay"></div>
+    <div class="modal" id="addBoardModal">
+        <form class="modal-form" id="addBoardForm">
+            <h3>Add new Board</h3>
+            <input type="text" id="addBoardTitle" placeholder="Title" required>
+            <input type="text" id="addBoardDesc" placeholder="Description">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="modal" id="addItemModal">
+        <form class="modal-form" id="addItemForm">
+            <h3>Add new Item</h3>
+            <input type="text" id="addItemTitle" placeholder="Title" required>
+            <input type="text" id="addItemDesc" placeholder="Description">
+            <input type="date" name="dueDate" id="ItemDueDate">
+            <select name="priority" id="ItemPriority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button type="submit">Add</button>
+        </form>
     </div>
 </body>
 </html>
