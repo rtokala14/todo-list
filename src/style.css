@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#main-content {
+    grid-template-columns: minmax(10rem, 25%) auto;
+}
