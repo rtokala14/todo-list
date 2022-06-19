@@ -26,16 +26,9 @@ let activeItem = null;
 const modal = document.getElementById('addItemModal');
 const form = document.getElementById('addItemForm');
 const overlay = document.getElementById('overlay');
-const addBtn = document.getElementById('button-item');
+//const addBtn = document.getElementById('button-item');
 
 const addNewItemListener = () => {
-    addBtn.addEventListener('click', () => {
-        if (activeBoard !== null) {
-            form.reset();
-            modal.classList.add('active');
-            overlay.classList.add('active');
-        }
-    })
 
     overlay.onclick = () => closeModal();
 }
@@ -62,11 +55,44 @@ const displayItems = (board) => {
     cont.textContent = '';
     board.getItems().forEach((item) => {
         let card = document.createElement('li');
-        card.textContent = item.getTitle() + item.getParent().getTitle();
-        card.classList.add('item-title');
+        card.classList.add('item-box');
+        card.appendChild(populateCard(item));
         item.htmlItem = card;
         cont.appendChild(card);
+    });
+
+    // Add the add-item button to container
+    const finalAppend = document.createElement('li');
+    finalAppend.classList.add('add-item-btn');
+    finalAppend.textContent = "+";
+    finalAppend.id = "button-item";
+    finalAppend.addEventListener('click', () => {
+        form.reset();
+        modal.classList.add('active');
+        overlay.classList.add('active');
     })
+    cont.appendChild(finalAppend);
+    finalAppend.classList.remove()
+}
+
+const populateCard = (item) => {
+    const outerDiv = document.createElement('div');
+    outerDiv.classList.add(
+        'border-b-2', 'p-2', 'border-black', 'flex', 
+        'justify-between', 'items-center'
+    );
+
+    const title = document.createElement('h2');
+    title.classList.add('text-lg', 'font-semibold');
+    title.textContent = item.getTitle();
+    outerDiv.appendChild(title);
+
+    const btn = document.createElement('button');
+    btn.className = "text-4xl text-primary";
+    btn.textContent = "|";
+    outerDiv.appendChild(btn);
+
+    return outerDiv;
 }
 
 export {addNewItemListener, displayItems};

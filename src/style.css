@@ -55,3 +55,18 @@
 .board-title:hover {
     @apply cursor-pointer
 }
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(250px, 1fr);
+    gap: 4rem;
+}
+
+.item-box {
+    @apply border-primary border-2 rounded-lg p-2 flex flex-col
+}
+
+.add-item-btn {
+    @apply border-primary border-2 border-dashed font-bold text-8xl items-center
+}
