@@ -7,11 +7,21 @@ const Item = (title, desc) => {
 
     let checked = false;
     let htmlItem = null;
+    let parentBoard = null;
 
     const getStatus = () => checked;
 
-    return {getDesc, getStatus, getTitle, htmlItem}
+    const getParent = () => parentBoard;
+
+    const setParent = (parent) => {
+        parentBoard = parent;
+    }
+
+    return {getDesc, getStatus, getTitle, htmlItem, getParent, setParent}
 }
+
+const itemList = [];
+let activeItem = null;
 
 const modal = document.getElementById('addItemModal');
 const form = document.getElementById('addItemForm');
@@ -40,6 +50,8 @@ form.onsubmit = (e) => {
     const title = document.getElementById('addItemTitle').value;
     const desc = document.getElementById('addItemDesc').value;
     const newItem = Item(title, desc);
+    itemList.push(newItem);
+    newItem.setParent(activeBoard);
     closeModal();
     activeBoard.addItem(newItem);
     displayItems(activeBoard);
@@ -50,7 +62,7 @@ const displayItems = (board) => {
     cont.textContent = '';
     board.getItems().forEach((item) => {
         let card = document.createElement('li');
-        card.textContent = item.getTitle();
+        card.textContent = item.getTitle() + item.getParent().getTitle();
         card.classList.add('item-title');
         item.htmlItem = card;
         cont.appendChild(card);
