@@ -11,10 +11,12 @@ module.exports = {
         '100%': '100%',
       },
       colors: {
-        'primary-dark': '#006d77',
-        'secondary-dark': '#83c5be',
-        'primary-light': '#edf6f9',
-      }
+        'primary': '#ff6700',
+        'primary-variant': '#ff9248',
+        'secondary': '#ffb38a',
+        'secondary-variant': '#ffd7b5',
+        'base': '#ffffff',
+      },
     },
   },
   variants: {

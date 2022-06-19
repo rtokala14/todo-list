@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 #main-content {
-    grid-template-columns: minmax(10rem, 25%) auto;
+    grid-template-columns: minmax(10rem, 20%) auto;
+}
+
+.btn {
+    @apply border-primary rounded-md p-1;
 }
 
 .modal {
-    @apply fixed top-50% left-50% w-80 p-11 text-center rounded-xl border-primary-dark border-2 transform -translate-x-1/2 -translate-y-1/2 scale-0 ease-in-out duration-200
+    @apply fixed top-50% left-50% w-80 p-11 text-center rounded-xl border-primary border-2 transform -translate-x-1/2 -translate-y-1/2 scale-0 ease-in-out duration-200
 }
 
 .modal.active {
@@ -29,11 +33,11 @@
 }
 
 .board-title {
-    @apply font-semibold text-lg 
+    @apply font-normal text-lg p-2
 }
 
 .board-title.active {
-    @apply text-white bg-slate-400
+    @apply text-primary-variant bg-secondary-variant font-bold
 }
 
 .board-title:hover {
