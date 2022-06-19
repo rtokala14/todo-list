@@ -29,25 +29,25 @@
     <div id="overlay"></div>
     <div class="modal" id="addBoardModal">
         <form class="modal-form" id="addBoardForm">
-            <h3>Add new Board</h3>
-            <input type="text" id="addBoardTitle" placeholder="Title" required>
-            <input type="text" id="addBoardDesc" placeholder="Description">
-            <button type="submit">Add</button>
+            <h3 class="form-title">Add new Project</h3>
+            <input class="form-textbox" type="text" id="addBoardTitle" placeholder="Title" required>
+            <input class="form-textbox" type="text" id="addBoardDesc" placeholder="Description">
+            <button class="form-submit" type="submit">Add</button>
         </form>
     </div>
 
     <div class="modal" id="addItemModal">
         <form class="modal-form" id="addItemForm">
-            <h3>Add new Item</h3>
-            <input type="text" id="addItemTitle" placeholder="Title" required>
-            <input type="text" id="addItemDesc" placeholder="Description">
-            <input type="date" name="dueDate" id="ItemDueDate">
-            <select name="priority" id="ItemPriority">
+            <h3 class="form-title">Add new Item</h3>
+            <input class="form-textbox" type="text" id="addItemTitle" placeholder="Title" required>
+            <input class="form-textbox" type="text" id="addItemDesc" placeholder="Description">
+            <input class="form-textbox" type="date" name="dueDate" id="ItemDueDate">
+            <select class="form-textbox" name="priority" id="ItemPriority">
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
             </select>
-            <button type="submit">Add</button>
+            <button class="form-submit" type="submit">Add</button>
         </form>
     </div>
 </body>

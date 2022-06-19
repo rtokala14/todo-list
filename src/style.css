@@ -11,7 +11,7 @@
 }
 
 .modal {
-    @apply fixed top-50% left-50% w-80 p-11 text-center rounded-xl border-primary border-2 transform -translate-x-1/2 -translate-y-1/2 scale-0 ease-in-out duration-200
+    @apply fixed top-50% left-50% w-80 p-11 text-center rounded-xl border-primary border-2 bg-secondary transform -translate-x-1/2 -translate-y-1/2 scale-0 ease-in-out duration-200
 }
 
 .modal.active {
@@ -19,7 +19,19 @@
 }
 
 .modal-form {
-    @apply flex flex-col p-2
+    @apply flex flex-col p-2 gap-2
+}
+
+.form-title {
+    @apply p-3 font-bold text-lg 
+}
+
+.form-textbox {
+    @apply bg-inherit rounded-md p-1
+}
+
+.form-submit {
+    @apply border-primary border-2 p-2 rounded-md
 }
 
 #overlay {
