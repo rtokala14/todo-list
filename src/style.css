@@ -45,7 +45,7 @@
 }
 
 .board-title {
-    @apply font-normal text-lg p-2
+    @apply font-normal text-lg p-2 break-words
 }
 
 .board-title.active {
@@ -56,12 +56,17 @@
     @apply cursor-pointer
 }
 
+#items-panel {
+    @apply p-10
+}
+
 #items-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 270px));
     grid-auto-rows: minmax(250px, 1fr);
     gap: 4rem;
     padding: 3rem;
+    padding-left: 2rem;
 }
 
 .item-box {
@@ -70,4 +75,8 @@
 
 .add-item-btn {
     @apply border-primary border-2 border-dashed rounded-lg font-bold text-8xl items-center
+}
+
+.add-item-btn:hover {
+    @apply cursor-pointer
 }

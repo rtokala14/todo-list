@@ -51,8 +51,17 @@ form.onsubmit = (e) => {
 }
 
 const displayItems = (board) => {
-    const cont = document.getElementById('items-container');
-    cont.textContent = '';
+    const panel = document.getElementById('items-panel');
+    panel.textContent = '';
+
+    const heading = document.createElement('h2');
+    heading.textContent = board.getTitle();
+    heading.className = "text-3xl pb-1 font-semibold border-b-2 border-black break-words";
+    panel.appendChild(heading);
+
+    const cont = document.createElement('ul');
+    cont.id = 'items-container';
+
     board.getItems().forEach((item) => {
         let card = document.createElement('li');
         card.classList.add('item-box');
@@ -72,7 +81,8 @@ const displayItems = (board) => {
         overlay.classList.add('active');
     })
     cont.appendChild(finalAppend);
-    finalAppend.classList.remove()
+
+    panel.appendChild(cont);
 }
 
 const populateCard = (item) => {
@@ -83,6 +93,7 @@ const populateCard = (item) => {
     );
 
     const title = document.createElement('h2');
+
     title.classList.add('text-lg', 'font-semibold');
     title.textContent = item.getTitle();
     outerDiv.appendChild(title);
