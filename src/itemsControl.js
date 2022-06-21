@@ -45,7 +45,8 @@ form.onsubmit = (e) => {
     const newItem = Item(title, desc);
     itemList.push(newItem);
     newItem.setParent(activeBoard);
-    closeModal();
+    //closeModal();
+
     activeBoard.addItem(newItem);
     displayItems(activeBoard);
 }
@@ -77,9 +78,11 @@ const displayItems = (board) => {
     finalAppend.id = "button-item";
     finalAppend.addEventListener('click', () => {
         form.reset();
-        modal.classList.add('active');
-        overlay.classList.add('active');
-    })
+        finalAppend.parentNode.removeChild(finalAppend);
+        cont.appendChild(form);
+        form.classList.add('item-box');
+        
+    });
     cont.appendChild(finalAppend);
 
     panel.appendChild(cont);
